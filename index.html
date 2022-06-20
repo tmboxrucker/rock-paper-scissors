@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockPaperScissors</title>
+</head>
+<body>
+    <script>
+        function game () {
+            let playerWins = 0;
+            let computerWins = 0;
+            for (let i = 0; i < 5;i++) {
+                console.log('Round ' + (i+1));
+                let selection = prompt('Choose either "Rock", "Paper", or "Scissors" against the computer (best of 5)')
+                let winner = playRound(selection);
+                while (winner.charAt(4) == 'r') {
+                    console.log(winner);
+                    selection = prompt('Choose either "Rock", "Paper", or "Scissors" against the computer (best of 5)');
+                    winner = playRound(selection);
+                    console.log('');
+                }
+                    console.log (winner);
+                if (winner.charAt(4) == 'w') {
+                    playerWins = playerWins + 1;
+                    console.log('Player has ' + playerWins + ' wins.');
+                    console.log('Computer has ' + computerWins + ' wins.');
+                }
+                else if (winner.charAt(4) == 'l') {
+                    computerWins = computerWins + 1;
+                    console.log('Player has ' + playerWins + ' wins.');
+                    console.log('Computer has ' + computerWins + ' wins.');
+                }
+                else if (winner.charAt(4) == 'd') {
+                    console.log('Player has ' + playerWins + ' wins.');
+                    console.log('Computer has ' + computerWins + ' wins.');
+                }
+                else {
+                    console.log('I don\'t know how this happened');
+                }
+                console.log('');
+            }
+            if (playerWins > computerWins) {
+                console.log('You won the whole game!');
+            }
+            else if (playerWins < computerWins) {
+                console.log('You lost the whole game!');
+            }
+            else {
+                console.log('The game was a draw!');
+            }
+        }
+        function playRound (playerSelection = '',computerSelection = computerPlay()) {
+            playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.substr(1).toLowerCase();              // This section converts the first input to Title case
+            computerSelection = computerSelection.charAt(0).toUpperCase() + computerSelection.substr(1).toLowerCase();        // This section converts the second input to Title case
+            
+            if ((playerSelection == 'Rock' && computerSelection == 'Scissors') || (playerSelection == 'Paper' && computerSelection == 'Rock') || (playerSelection == 'Scissors' && computerSelection == 'Paper')){       
+                return ('You win! ' + playerSelection + ' beats ' + computerSelection + '!')
+            }
+            else if ((playerSelection == 'Rock' && computerSelection == 'Paper') || (playerSelection == 'Paper' && computerSelection == 'Scissors') || (playerSelection == 'Scissors' && computerSelection == 'Rock')){
+                return ('You lose! ' + computerSelection + ' beats ' + playerSelection + '!')
+            }
+            else if ((playerSelection == 'Rock' && computerSelection == 'Rock') || (playerSelection == 'Paper' && computerSelection == 'Paper') || (playerSelection == 'Scissors' && computerSelection == 'Scissors')){
+                return ('You draw! ' + computerSelection + ' is the same as ' + playerSelection + '!')
+            }
+            else {
+                return ('Incorrect parameter(s) chosen, please use either rock, paper, or scissors with \'\'s surrounding the word (example: \'rock\', \'paper\', or \'scissors\')')
+            }
+        }
+
+        let computerSelection = computerPlay;
+        function computerPlay(){
+            let randNum = Math.floor(Math.random()*3)+1;
+            if (randNum == 1){
+                return ('Rock');
+            }
+            else if (randNum == 2){
+                return ('Paper');
+            }
+            else {
+                return ('Scissors');
+            }
+        }
+    </script>
+</body>
+</html>
