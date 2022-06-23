@@ -1,47 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RockPaperScissors</title>
-    <link rel="stylesheet" href="index.css">
 
-</head>
-<body>
-    <h1>Rock Paper Scissors!</h1>
-    <p>Choose your weapon!</p>
-    <div>
-        <button class="rock buttons"><img src='images/rock.png' alt="Rock"></button>
-        <button class="paper buttons"><img src='images/paper.png' alt="Paper"></button>
-        <button class="scissors buttons"><img src='images/scissors.png' alt="Scissors"></button>
-    </div>
-    <p class="round game"></p>
-    <p class="output game"></p>
-    <p class="standingPlay game"></p>
-    <p class="standingComp game"></p>
-    <p class="verdict game"></p>
-
-    <!-- <script>
-        const btn = document.querySelector('.buttons');
+        const btn = document.querySelectorAll('.buttons');
         const body = document.querySelector('body');
-        btn.addEventListener('click',game);
+        btn.forEach (btn => (btn.addEventListener('click',game)));
+        //btn.addEventListener('click',game);
         let count = 0;
         let playerWins = 0;
         let computerWins = 0;
         let roundCounter = 0;
         
         function game (e) { // runs a game (best of 5) against the computer
-            let selection = e.srcElement.className;
+            let selection = e.srcElement.alt;
+            console.log(e);
             if (roundCounter == 5){
                 roundCounter = 0;
                 playerWins = 0;
                 computerWins = 0;
-                const clear = document.querySelectorAll('p');
-                clear.forEach ((p) => {p.textContent = ''});
+                let clear = document.querySelectorAll('.game');
+                clear.forEach ((clear) => {clear.innerHTML = ''});
             }
             const content = document.querySelector('.round');
             content.textContent = 'Round ' + (roundCounter+1);
+            console.log(selection);
             let winner = playRound(selection);
             if (winner.charAt(4) == 'w') {
                 playerWins = playerWins + 1;
@@ -129,7 +108,3 @@
                 return ('Scissors');
             }
         }
-    </script> -->
-</body>
-<script src="index.js"></script>
-</html>
