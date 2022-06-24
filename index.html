@@ -9,20 +9,45 @@
 
 </head>
 <body>
-    <h1>Rock Paper Scissors!</h1>
-    <p>Choose your weapon!</p>
-    <div>
-        <button class="rock buttons"><img src='images/rock.png' alt="Rock"></button>
-        <button class="paper buttons"><img src='images/paper.png' alt="Paper"></button>
-        <button class="scissors buttons"><img src='images/scissors.png' alt="Scissors"></button>
+    <div class="header">
+        <h1>Rock Paper Scissors!</h1>
     </div>
-    <p class="round game"></p>
-    <p class="output game"></p>
-    <p class="standingPlay game"></p>
-    <p class="standingComp game"></p>
-    <p class="verdict game"></p>
-
-    <!-- <script>
+    <div class="content">
+        <p class="weaponChoice">Choose your weapon!</p>
+        <div class="groupedButtons">
+            <div class="divButton">
+                <button class="rock buttons"><img src='images/rock.png' alt="Rock"></button>
+                <div>Rock</div>
+            </div>
+            <div class="divButton">
+                <button class="paper buttons"><img src='images/paper.png' alt="Paper"></button>
+                <div>Paper</div>
+            </div>
+            <div class="divButton">
+                <button class="scissors buttons"><img src='images/scissors.png' alt="Scissors"></button>
+                <div>Scissors</div>
+            </div>
+        </div>
+        <div class="totalOutput">
+            <p class="round game">Ready!?</p>
+            <p class="output game"></p>
+            <p class="verdict game"></p>
+        </div>
+    </div>
+    <div class="score">
+        <div class="playerScore">
+            <p class="standingPlay game"></p>
+            <p>Player Score</p>
+        </div>
+        <div id="help">
+            <p><a>help</a></p>
+        </div>
+        <div class="computerScore">
+            <p class="standingComp game"></p>
+            <p>Computer Score</p>
+        </div>
+    </div>
+    <!-- <script>                // moved to separate js file
         const btn = document.querySelector('.buttons');
         const body = document.querySelector('body');
         btn.addEventListener('click',game);
