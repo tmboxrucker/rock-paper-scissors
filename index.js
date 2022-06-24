@@ -33,19 +33,19 @@
             }
             if (playerWins == 1){
                 const playerStanding = document.querySelector('.standingPlay');
-                playerStanding.textContent = 'Player has ' + playerWins + ' win.';
+                playerStanding.textContent = playerWins;
             }
             else {
                 const playerStanding = document.querySelector('.standingPlay');
-                playerStanding.textContent = 'Player has ' + playerWins + ' wins.';
+                playerStanding.textContent = playerWins;
             }
             if (computerWins == 1){
                 const computerStanding = document.querySelector('.standingComp');
-                computerStanding.textContent = 'Computer has ' + computerWins + ' win.';
+                computerStanding.textContent = computerWins;
             }
             else {
                 const computerStanding = document.querySelector('.standingComp');
-                computerStanding.textContent = 'Computer has ' + computerWins + ' wins.';
+                computerStanding.textContent = computerWins;
             }
             roundCounter ++;
             if (roundCounter == 5){   

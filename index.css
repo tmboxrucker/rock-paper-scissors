@@ -1,3 +1,9 @@
+:root {
+    --primary-dark: #333;
+    --primary-light: #ededed;
+    --secondary-light: #fefefe;
+}
+
 * {
     margin: 0%;
     padding: 0%;
@@ -8,11 +14,14 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+    background-color: var(--primary-light);
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-dark);
 }
 
-p:before {
-    content: '\00a0 ';
-}
+/* .totalOutput .game:before {
+    content: '\00a0';
+} */
 
 .content {
     flex: 1;
@@ -28,6 +37,7 @@ p:before {
     justify-content: center;
     align-items: center;
     margin: 1%;
+    font-size: xx-large;
 }
 
 .groupedButtons {
@@ -48,6 +58,7 @@ p:before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 250px;
 }
 
 .score {
@@ -59,12 +70,21 @@ p:before {
 .playerScore, .computerScore {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     align-items: center;
-    width: 110px;
-    border: 2px solid black;
+    width: 125px;
+    border: 2px solid var(--primary-dark);
+    border-radius: 5px;
     height: 100px;
     margin: 1%;
+}
+
+
+.standingPlay, .standingComp {
+    font-size: xx-large;
+    flex: 1;
+    display: flex;
+    align-items: center;
 }
 
 #help {
